@@ -7,6 +7,7 @@ import statusSocket from "@/lib/websocket/statusSocket";
 import socketMiddleware from "@/lib/middleware/socketMiddleware";
 import HttpError from "@/lib/models/httpError";
 import contactRouter from "@/lib/routes/contactRoutes";
+import healthRouter from "@/lib/routes/healthRoutes";
 import { Server } from "socket.io";
 import { logger } from "@/lib/services/logger";
 import { validateTokenServerSide } from "@/lib/services/authServices";
@@ -18,6 +19,7 @@ app.use(cookieParser());
 app.use(express.json({ limit: "500kb" }));
 
 app.use('/api/contact', contactRouter);
+app.use('/api/health', healthRouter);
 
 app.use((req, res, next) => {
     const error = new HttpError('Could not find this route.', 404);
