@@ -1,7 +1,7 @@
-import connectToDatabase from "@/lib/database/mongoose";
-import { getCache, setCache, deleteCache } from "@/lib/services/cacheServices";
-import { User } from "@/lib/models/databaseModels";
-import { logger } from "@/lib/services/logger";
+import connectToDatabase from "@/lib/database/mongoose.js";
+import { getCache, setCache, deleteCache } from "@/lib/services/cacheServices.js";
+import { User } from "@/lib/models/databaseModels.js";
+import { logger } from "@/lib/services/logger.js";
 
 const getUserContacts = async (userId: string) => {
     let contacts, contactDetails;

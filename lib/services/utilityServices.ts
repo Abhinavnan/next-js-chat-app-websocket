@@ -2,8 +2,8 @@ import jwt from "jsonwebtoken";
 import axios, { Method, AxiosRequestConfig } from "axios";
 import { ZodIssue } from "zod";
 import { Socket } from "socket.io";
-import { logger } from "./logger";
-import { jwtSecret, nextjsUrl } from "@/lib/config/config";
+import { logger } from "./logger.js";
+import { jwtSecret, nextjsUrl } from "@/lib/config/config.js";
 
 const parseZodError = (parsedData: any) => {
     const errors = JSON.parse(parsedData.error.message).map((e: ZodIssue) => e.message).filter(Boolean).join('\n');

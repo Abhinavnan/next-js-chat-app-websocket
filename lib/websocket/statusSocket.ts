@@ -1,8 +1,8 @@
 import { Socket } from "socket.io";
-import { logger } from "@/lib/services/logger";
-import { asyncErrorHandler } from "@/lib/services/utilityServices";
-import { handleUpdateUserStatus, handleCheckUserStatus } from "@/lib/services/userServices";
-import { StatusInfo } from "@/lib/types/types";
+import { logger } from "@/lib/services/logger.js";
+import { asyncErrorHandler } from "@/lib/services/utilityServices.js";
+import { handleUpdateUserStatus, handleCheckUserStatus } from "@/lib/services/userServices.js";
+import { StatusInfo } from "@/lib/types/types.js";
 
 const statusSocket = (io: any) => {
     io.on("connection", (socket: Socket) => {

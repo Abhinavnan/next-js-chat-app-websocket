@@ -1,9 +1,9 @@
 import { Socket } from "socket.io";
-import { logger } from "@/lib/services/logger";
-import { joinChatRoom, sendMessage, updateReceivedMessages, updateSeenMessages, getUnseenMessageCount } from "@/lib/services/chatServices";
-import { getunseenMessages } from "@/lib/services/chatServices";
-import { asyncErrorHandler } from "@/lib/services/utilityServices";
-import { MessageInfo } from "@/lib/types/types";
+import { logger } from "@/lib/services/logger.js";
+import { joinChatRoom, sendMessage, updateReceivedMessages, updateSeenMessages, getUnseenMessageCount } from "@/lib/services/chatServices.js";
+import { getunseenMessages } from "@/lib/services/chatServices.js";
+import { asyncErrorHandler } from "@/lib/services/utilityServices.js";
+import { MessageInfo } from "@/lib/types/types.js";
 
 const chatSocket = (io: any) => {
     io.on("connection", (socket: Socket) => {

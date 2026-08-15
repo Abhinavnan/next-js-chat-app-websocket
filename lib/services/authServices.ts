@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 import { Socket } from "socket.io";
-import { jwtSecret } from '@/lib/config/config';
-import { logger } from '@/lib/services/logger';
-import { getUserSessionDetails, getUserDetailsById } from '@/lib/services/userServices';
+import { jwtSecret } from '@/lib/config/config.js';
+import { logger } from '@/lib/services/logger.js';
+import { getUserSessionDetails, getUserDetailsById } from '@/lib/services/userServices.js';
 
 const validateTokenServerSide = async (socket: Socket, next: () => void) => {
     const cookies = socket.data.cookies;

@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
     "rootDir": ".",
     "outDir": "./dist",
     "paths": {

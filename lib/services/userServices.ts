@@ -1,14 +1,14 @@
 import zod from "zod";
 import dayjs from "dayjs";
 import { Socket } from "socket.io";
-import connectToDatabase from "@/lib/database/mongoose";
-import { getCache, setCache, deleteCache } from "@/lib/services/cacheServices";
-import { User, UserSession } from "@/lib/models/databaseModels";
-import { logger } from "@/lib/services/logger";
-import { UserDetails, StatusInfo } from "@/lib/types/types";
-import { parseZodError } from "./utilityServices";
-import { getAllChatRooms, checkChatRoom } from "./chatServices";
-import { getReceiverDetailsByIndex } from "./contactServices";
+import connectToDatabase from "@/lib/database/mongoose.js";
+import { getCache, setCache, deleteCache } from "@/lib/services/cacheServices.js";
+import { User, UserSession } from "@/lib/models/databaseModels.js";
+import { logger } from "@/lib/services/logger.js";
+import { UserDetails, StatusInfo } from "@/lib/types/types.js";
+import { parseZodError } from "./utilityServices.js";
+import { getAllChatRooms, checkChatRoom } from "./chatServices.js";
+import { getReceiverDetailsByIndex } from "./contactServices.js";
 
 const userStatusSchema = zod.object({
     status: zod.enum(['away', 'online', 'offline'], { message: 'Invalid status' }),

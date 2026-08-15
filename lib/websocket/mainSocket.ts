@@ -1,4 +1,4 @@
-import { logger } from "@/lib/services/logger";
+import { logger } from "@/lib/services/logger.js";
 
 const mainSocket = (io: any) => {
     io.on('connection', async (socket: any) => {

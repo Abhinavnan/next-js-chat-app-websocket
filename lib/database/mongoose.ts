@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import dns from 'dns';
-import { mongoDBConnectionURL } from '@/lib/config/config';
-import { logger } from '@/lib/services/logger';
+import { mongoDBConnectionURL } from '@/lib/config/config.js';
+import { logger } from '@/lib/services/logger.js';
 
 if (!mongoDBConnectionURL) {
     logger.error('MONGODB_CONNECTION_URL is not defined');

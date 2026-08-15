@@ -1,17 +1,17 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import mainSocket from "@/lib/websocket/mainSocket";
-import chatSocket from "@/lib/websocket/chatSocket";
-import statusSocket from "@/lib/websocket/statusSocket";
-import socketMiddleware from "@/lib/middleware/socketMiddleware";
-import HttpError from "@/lib/models/httpError";
-import contactRouter from "@/lib/routes/contactRoutes";
-import healthRouter from "@/lib/routes/healthRoutes";
+import mainSocket from "@/lib/websocket/mainSocket.js";
+import chatSocket from "@/lib/websocket/chatSocket.js";
+import statusSocket from "@/lib/websocket/statusSocket.js";
+import socketMiddleware from "@/lib/middleware/socketMiddleware.js";
+import HttpError from "@/lib/models/httpError.js";
+import contactRouter from "@/lib/routes/contactRoutes.js";
+import healthRouter from "@/lib/routes/healthRoutes.js";
 import { Server } from "socket.io";
-import { logger } from "@/lib/services/logger";
-import { validateTokenServerSide } from "@/lib/services/authServices";
-import { port, allowedOrigins } from "@/lib/config/config";
+import { logger } from "@/lib/services/logger.js";
+import { validateTokenServerSide } from "@/lib/services/authServices.js";
+import { port, allowedOrigins } from "@/lib/config/config.js";
 
 const app = express();
 app.use(cors({ origin: allowedOrigins, credentials: true }));

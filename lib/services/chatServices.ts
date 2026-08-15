@@ -1,14 +1,14 @@
 import zod from "zod";
 import { Socket } from "socket.io";
-import { ChatRoom } from "@/lib/models/databaseModels";
-import connectToDatabase from "@/lib/database/mongoose";
-import { getReceiverDetailsByIndex, getUserContacts } from "@/lib/services/contactServices";
-import { getCache, setCache, deleteCache } from "@/lib/services/cacheServices";
-import { logger } from "@/lib/services/logger";
-import { MessageInfo } from "@/lib/types/types";
-import { parseZodError, normalizeMessages, sanitiseMessages, sendAPICall } from "./utilityServices";
-import { getUserDetailsById } from "./userServices";
-import { Chat } from "@/lib/models/databaseModels";
+import { ChatRoom } from "@/lib/models/databaseModels.js";
+import connectToDatabase from "@/lib/database/mongoose.js";
+import { getReceiverDetailsByIndex, getUserContacts } from "@/lib/services/contactServices.js";
+import { getCache, setCache, deleteCache } from "@/lib/services/cacheServices.js";
+import { logger } from "@/lib/services/logger.js";
+import { MessageInfo } from "@/lib/types/types.js";
+import { parseZodError, normalizeMessages, sanitiseMessages, sendAPICall } from "./utilityServices.js";
+import { getUserDetailsById } from "./userServices.js";
+import { Chat } from "@/lib/models/databaseModels.js";
 
 const messageSchema = zod.object({
     refrenceId: zod.string().uuid('Invalid refrenceId'),

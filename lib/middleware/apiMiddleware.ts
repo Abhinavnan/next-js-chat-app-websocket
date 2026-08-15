@@ -2,10 +2,10 @@ import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import requestIp from "request-ip";
 import { UAParser } from "ua-parser-js"
-import HttpError from "@/lib/models/httpError";
-import { logger } from "@/lib/services/logger";
-import { jwtSecret } from "@/lib/config/config";
-import { getUserSessionDetails, getUserDetailsById } from "@/lib/services/userServices";
+import HttpError from "@/lib/models/httpError.js";
+import { logger } from "@/lib/services/logger.js";
+import { jwtSecret } from "@/lib/config/config.js";
+import { getUserSessionDetails, getUserDetailsById } from "@/lib/services/userServices.js";
 
 const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
     const { authToken, sessionId, refreshId } = req.cookies;

@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { authMiddleware } from '@/lib/middleware/apiMiddleware';
-import { updateUserContacts } from '@/lib/controllers/contactControllers';
+import { authMiddleware } from '@/lib/middleware/apiMiddleware.js';
+import { updateUserContacts } from '@/lib/controllers/contactControllers.js';
 
 const route = Router();
 route.use(authMiddleware);

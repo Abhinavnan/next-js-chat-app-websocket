@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { deleteCache } from "@/lib/services/cacheServices";
+import { deleteCache } from "@/lib/services/cacheServices.js";
 
 const updateUserContacts = async (req: Request, res: Response, next: NextFunction) => {
     const { userId } = req.cookies.userDetails;
