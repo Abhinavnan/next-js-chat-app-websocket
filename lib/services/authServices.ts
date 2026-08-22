@@ -11,7 +11,7 @@ const validateTokenServerSide = async (socket: Socket, next: () => void) => {
     const refreshId = cookies.refreshId;
     const deviceInfo = socket.data.deviceInfo;
     if (!authToken) {
-        logger.warn('Missing authToken or sessionId in cookies', deviceInfo);
+        logger.warn('Missing authToken in cookies', deviceInfo);
         return socket.disconnect(true);
     }
     let userId;
